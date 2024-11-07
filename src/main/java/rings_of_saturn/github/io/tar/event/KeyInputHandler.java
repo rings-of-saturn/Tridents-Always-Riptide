@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import org.lwjgl.glfw.GLFW;
 
@@ -14,7 +15,7 @@ import java.io.File;
 import static rings_of_saturn.github.io.tar.client.TARClient.isModActive;
 
 public class KeyInputHandler {
-	public static final String KEY_CATEGORY_PRISMIUM = "key.category.deeper_aquatic.deeper_aquatic";
+	public static final String KEY_CATEGORY_PRISMIUM = "key.category.tar.tar";
 
 
 	public static final String MOD_ACTIVE = "key.tar.activate_mod";
@@ -25,6 +26,10 @@ public class KeyInputHandler {
 			if(client.player != null) {
 				if (modActivateKey.wasPressed()) {
 					isModActive = !isModActive;
+					if(isModActive)
+						client.player.sendMessage(Text.of("Turned Tridents Always Riptide: §aOn"), true);
+					else
+						client.player.sendMessage(Text.of("Turned Tridents Always Riptide: §cOff"), true);
 				}
 			}
 		});
