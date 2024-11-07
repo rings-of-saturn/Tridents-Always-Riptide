@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "tar",
+  "version": "${version}",
+  "name": "Tridents Always Riptide",
+  "description": "Hack client >:3",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/tar/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "rings_of_saturn.github.io.tar.client.TARClient"
+    ],
+    "main": [
+      "rings_of_saturn.github.io.tar.TAR"
+    ]
+  },
+  "mixins": [
+    "tar.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
